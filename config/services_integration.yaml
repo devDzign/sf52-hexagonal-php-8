@@ -21,7 +21,7 @@ services:
   App\UserInterface\:
     resource: '../src/UserInterface'
 
-  MChabour\Domain\:
+  Domain\:
     resource: '../domain/src'
 
   # controllers are imported separately to make sure services can be injected
