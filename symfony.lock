@@ -1,4 +1,7 @@
 {
+    "beberlei/assert": {
+        "version": "v3.3.0"
+    },
     "behat/behat": {
         "version": "v3.8.1"
     },
@@ -119,6 +122,9 @@
     },
     "nikic/php-parser": {
         "version": "v4.10.4"
+    },
+    "php-webdriver/webdriver": {
+        "version": "1.10.0"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
@@ -356,6 +362,15 @@
     "symfony/orm-pack": {
         "version": "v2.1.0"
     },
+    "symfony/panther": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "93d9baa582d0a755cc9ef81bc38a921d5fa16973"
+        }
+    },
     "symfony/phpunit-bridge": {
         "version": "5.1",
         "recipe": {
@@ -390,6 +405,9 @@
         "version": "v1.22.1"
     },
     "symfony/polyfill-php80": {
+        "version": "v1.22.1"
+    },
+    "symfony/polyfill-uuid": {
         "version": "v1.22.1"
     },
     "symfony/process": {
@@ -498,6 +516,9 @@
     },
     "symfony/twig-pack": {
         "version": "v1.0.1"
+    },
+    "symfony/uid": {
+        "version": "v5.2.3"
     },
     "symfony/validator": {
         "version": "4.3",
