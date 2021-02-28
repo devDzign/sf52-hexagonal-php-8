@@ -2,7 +2,9 @@
 
 namespace Domain\Security\Request;
 
-use Domain\Security\Assertion\Assertion;
+use Assert\Assertion;
+use Domain\Security\Assertion\UniqueEmailAssertion;
+use Domain\Security\Assertion\UniquePseudoAssertion;
 use Domain\Security\Gateway\UserGatewayInterface;
 
 /**
@@ -107,11 +109,12 @@ class RegistrationRequest
     public function validate(UserGatewayInterface $userGateway): void
     {
         Assertion::notBlank($this->pseudo);
+        UniquePseudoAssertion::nonUniquePseudo($this->pseudo, $userGateway);
         Assertion::notBlank($this->firstName);
         Assertion::notBlank($this->lastName);
         Assertion::notBlank($this->email);
         Assertion::email($this->email);
-        Assertion::nonUniqueEmail($this->email, $userGateway);
+        UniqueEmailAssertion::nonUniqueEmail($this->email, $userGateway);
         Assertion::notBlank($this->plainPassword);
         Assertion::minLength($this->plainPassword, 8);
     }

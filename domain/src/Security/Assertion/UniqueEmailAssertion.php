@@ -2,14 +2,13 @@
 
 namespace Domain\Security\Assertion;
 
-use Assert\Assertion as BaseAssertion;
+use Assert\Assertion;
 use Domain\Security\Exception\NonUniqueEmailException;
 use Domain\Security\Gateway\UserGatewayInterface;
 
-class Assertion extends BaseAssertion
+class UniqueEmailAssertion extends Assertion
 {
     public const EXISTING_EMAIL = 500;
-    public const EXISTING_PSEUDO = 501;
 
     /**
      * @param string               $email
@@ -19,8 +18,6 @@ class Assertion extends BaseAssertion
      */
     public static function nonUniqueEmail(string $email, UserGatewayInterface $userGateway): void
     {
-
-
         if (!$userGateway->isEmailUnique($email)) {
             throw new NonUniqueEmailException('This email should be unique', self::EXISTING_EMAIL);
         }

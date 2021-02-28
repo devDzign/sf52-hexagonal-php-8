@@ -72,6 +72,11 @@ class RegistrationTest extends TestCase
                     'password'
                 );
             }
+
+            public function isPseudoUnique(string $pseudo): bool
+            {
+                return !in_array($pseudo, ['usedPseudo', 'used_pseudo']);
+            }
         };
 
         $this->useCase = new Registration($userGateway);
@@ -125,7 +130,6 @@ class RegistrationTest extends TestCase
 
     public function provideRequestData(): \Generator
     {
-        yield ["","mourad", "chabour", "mchabour@codechallenge.fr", "password"];
         yield ["user","", "chabour", "mchabour@codechallenge.fr", "password"];
         yield ["user","mourad", "", "mchabour@codechallenge.fr", "password"];
 
@@ -134,6 +138,10 @@ class RegistrationTest extends TestCase
 
         // case short password < 8
         yield ["user","mourad", "chabour", "mchabour@codechallenge.fr", "faild"];
+
+        // case of pseudo failed
+        yield ["","mourad", "chabour", "mchabour@codechallenge.fr", "password"];
+        yield ["usedPseudo","mourad", "chabour", "mchabour@codechallenge.fr", "password"];
 
         // case of mail failed
         yield ["user","mourad", "chabour", "", "password"];

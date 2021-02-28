@@ -18,6 +18,13 @@ interface UserGatewayInterface
     public function isEmailUnique(string $email): bool;
 
     /**
+     * @param string $pseudo
+     *
+     * @return bool
+     */
+    public function isPseudoUnique(string $pseudo): bool;
+
+    /**
      * @param User $user
      */
     public function register(User $user): void;
