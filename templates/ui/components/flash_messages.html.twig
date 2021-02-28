@@ -1,0 +1,12 @@
+{% set flahses = app.flashes %}
+{% if flahses|length > 0 %}
+    {% for type, messages in flahses %}
+        <div class="alert {{ 'alert-'~type}}" role="alert">
+            <ul class="FlashBag">
+                {% for message in messages %}
+                    <li>{{ type }} : {{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+{% endif %}

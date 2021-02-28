@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container mt-3 registration">
+        <div class="row">
+
+            <div class="col-12">
+                <h2 class="text-center">Registration</h2>
+
+                {{ form_start(form) }}
+                {{ form_rest(form) }}
+                <button class="btn btn-block btn-outline-secondary">S'inscrire</button>
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
