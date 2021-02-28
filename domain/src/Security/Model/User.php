@@ -7,19 +7,20 @@ use Symfony\Component\Uid\Uuid;
 
 class User
 {
-    /**
-     * @var string $plainPassword
-     */
-    public string $plainPassword;
-    /**
-     * @var Uuid
-     */
+
+
+
+
     private Uuid $id;
     private ?string $pseudo;
     private ?string $firstName;
     private ?string $lastName;
     private ?string $email;
     private ?string $password;
+    /**
+     * @var string
+     */
+    private string $plainPassword;
 
     /**
      * User constructor.
@@ -65,30 +66,6 @@ class User
     }
 
     /**
-     * @return Uuid
-     */
-    public function getId(): Uuid
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getFirstName(): ?string
-    {
-        return $this->firstName;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getLastName(): ?string
-    {
-        return $this->lastName;
-    }
-
-    /**
      * @return string|null
      */
     public function getEmail(): ?string
@@ -96,27 +73,4 @@ class User
         return $this->email;
     }
 
-    /**
-     * @return string|null
-     */
-    public function getPassword(): ?string
-    {
-        return $this->password;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPlainPassword(): string
-    {
-        return $this->plainPassword;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getPseudo(): ?string
-    {
-        return $this->pseudo;
-    }
 }
