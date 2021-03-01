@@ -13,6 +13,7 @@
         <server name="SHELL_VERBOSITY" value="-1" />
         <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
         <server name="SYMFONY_PHPUNIT_VERSION" value="9.5" />
+        <server name="SYMFONY_DEPRECATIONS_HELPER" value="disabled" />
     </php>
 
     <testsuites>
@@ -25,7 +26,7 @@
         <testsuite name="system">
             <directory>tests/SystemTests</directory>
         </testsuite>
-        <testsuite name="e2e">
+        <testsuite name="end_to_end">
             <directory>tests/EndToEndTests</directory>
         </testsuite>
     </testsuites>
@@ -42,15 +43,15 @@
         </whitelist>
     </filter>
 
-
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
     </listeners>
 
     <extensions>
         <extension class="Symfony\Component\Panther\ServerExtension" />
-<!--        <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension" />-->
+        <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension" />
     </extensions>
+
 
 
     <logging>

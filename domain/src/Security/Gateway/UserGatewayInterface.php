@@ -22,7 +22,7 @@ interface UserGatewayInterface
      *
      * @return bool
      */
-    public function isPseudoUnique(string $pseudo): bool;
+    public function isPseudoUnique(?string $pseudo): bool;
 
     /**
      * @param User $user

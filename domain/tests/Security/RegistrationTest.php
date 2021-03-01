@@ -73,7 +73,7 @@ class RegistrationTest extends TestCase
                 );
             }
 
-            public function isPseudoUnique(string $pseudo): bool
+            public function isPseudoUnique(?string $pseudo): bool
             {
                 return !in_array($pseudo, ['usedPseudo', 'used_pseudo']);
             }
